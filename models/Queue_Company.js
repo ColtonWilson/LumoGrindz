@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Position extends Model {}
+class Queue_Company extends Model {}
 
-Position.init(
+Queue_Company.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,29 +11,18 @@ Position.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
             len: [8,50]
         }
         },
-        post_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        job_desc: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [8,500]
-        }
-        },
-        user_id:{
+        position_id:{
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'user',
+                model: 'queue_position',
                 key: 'id',
             },
         },
@@ -42,8 +31,8 @@ Position.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'position',
+    modelName: 'queue_company',
     }
 );
 
-module.exports = Position;
+module.exports = Queue_Company;

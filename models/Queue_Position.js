@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Position extends Model {}
+class Queue_Position extends Model {}
 
-Position.init(
+Queue_Position.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -42,8 +42,8 @@ Position.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'position',
+    modelName: 'queue_position',
     }
 );
 
-module.exports = Position;
+module.exports = Queue_Position;
