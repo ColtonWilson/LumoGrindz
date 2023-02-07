@@ -1,0 +1,2 @@
+# disable Prettier on any file with a .md extension.
+*.md 
