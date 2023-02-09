@@ -21,6 +21,7 @@ Position.init(
         post_date: {
             type: DataTypes.DATE,
             allowNull: false,
+            defaultValue: DataTypes.NOW,
         },
         job_desc: {
             type: DataTypes.STRING,
@@ -28,6 +29,13 @@ Position.init(
             validate: {
             len: [8,500]
         }
+        },
+        salary:{
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                isDecimal: true,
+            }
         },
         user_id:{
             type: DataTypes.INTEGER,
