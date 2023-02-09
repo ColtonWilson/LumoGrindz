@@ -37,6 +37,10 @@ Position.init(
                 key: 'id',
             },
         },
+        is_in_queue: {
+        type: DataTypes.Boolean,
+        defaultValue: true,
+        },
     },
     {
     sequelize,

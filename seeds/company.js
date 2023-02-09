@@ -7,10 +7,10 @@ const userData = [
     password: 'password',
   },
   {
-    username: 'tester',
-    email: 'test@test.com',
+    username: 'admin',
+    email: 'admin@test.com',
     password: '123456',
-
+    is_admin: true,
   },
 
 
