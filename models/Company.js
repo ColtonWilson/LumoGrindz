@@ -22,14 +22,6 @@ Company.init(
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,

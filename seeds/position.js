@@ -17,7 +17,7 @@ const positionData = [
     salary: 132125,
     // john Smith
     user_id: 1,
-    company_id: 1,
+    company_id: 2,
     is_in_queue: false,
   },
   {
