@@ -6,8 +6,8 @@ const withAuth = require('./../utils/auth')
 // GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await Company.findAll({
-      include: [{model: User, raw:true, nest:true}],
+    const postData = await User.findAll({
+      include: [{model: Company}],
     });
 
     const posts = postData.map((post) =>
