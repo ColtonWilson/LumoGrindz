@@ -45,7 +45,18 @@ Position.init(
                 key: 'id',
             },
         },
-        
+        company_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'company',
+                key: 'id',
+            },
+        },
+        is_in_queue: {
+        type: DataTypes.Boolean,
+        defaultValue: true,
+        },
     },
     {
     sequelize,
