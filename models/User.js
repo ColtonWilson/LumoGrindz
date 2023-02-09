@@ -37,7 +37,7 @@ User.init(
       },
     },
     is_admin: {
-      type: DataTypes.Boolean,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
   },

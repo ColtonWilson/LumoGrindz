@@ -24,10 +24,10 @@ Position.init(
             defaultValue: DataTypes.NOW,
         },
         job_desc: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
-            len: [8,500]
+            len: [8,5000]
         }
         },
         salary:{
@@ -54,7 +54,7 @@ Position.init(
             },
         },
         is_in_queue: {
-        type: DataTypes.Boolean,
+        type: DataTypes.BOOLEAN,
         defaultValue: true,
         },
     },

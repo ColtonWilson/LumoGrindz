@@ -7,6 +7,7 @@ const positionData = [
     salary: 125000,
     // admin
     user_id: 2,
+    company_id: 1,
     is_in_queue: true,
   },
   {
@@ -16,6 +17,7 @@ const positionData = [
     salary: 132125,
     // john Smith
     user_id: 1,
+    company_id: 1,
     is_in_queue: false,
   },
   {
@@ -23,6 +25,7 @@ const positionData = [
     job_desc: "As a Customer Engineer, you will work with the Sales team to introduce Google Cloud to our customers, Work with the team to identify and qualify business opportunities, identify key customer technical objections, and develop a strategy to resolve technical blockers",
     salary: 139000,
     user_id: 2,
+    company_id: 1,
     is_in_queue: false,
   }
 

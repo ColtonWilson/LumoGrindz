@@ -1,0 +1,35 @@
+{
+  "name": "lumogrindz",
+  "version": "1.0.0",
+  "description": "A application to show prices of a position for a company",
+  "main": "server.js",
+  "scripts": {
+    "test": "No test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColtonWilson/name_pending.git"
+  },
+  "author": "Colton Wilson, Marc Hamilton, Carlee Miller, KaDaija Dortch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColtonWilson/name_pending/issues"
+  },
+  "homepage": "https://github.com/ColtonWilson/name_pending#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.33.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.4"
+  }
+}

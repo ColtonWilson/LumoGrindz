@@ -18,16 +18,8 @@ Company.init(
         len: [8, 50],
       },
     },
-    position_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'position',
-        key: 'id',
-      },
-    },
     is_in_queue: {
-      type: DataTypes.Boolean,
+      type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
     user_id: {
