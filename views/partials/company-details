@@ -3,8 +3,8 @@
         <a href="/company/{{id}}">{{title}}</a>
         <div class="company_name_date">
             <h1>{{company.username}}</h1>
-            <p>Total Employees: </p>
             <p>Total Positions: </p>
+            <p>Is this working</p>
         </div>
     </div>
     <div class="card_body">

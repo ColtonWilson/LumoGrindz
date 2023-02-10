@@ -5,28 +5,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum</title>
+    <title>LumoGrindz</title>
     <link rel="stylesheet" type="text/css" href="/css/jass.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body>
+<body class="has-background-gold is-family-monospace">
     <header>
-        <h1>LumoGrindz</h1>
+        <h1 class="is-size-3">Welcome to LumoGrindz</h1>
     </header>
+    <p style="color:black">When you create an account with LumoGrindz you can aluminate the amount
+        of money you make for your job position and compare it to other jobs and companies
+        to see the value of your position compared to others.
+    </p>
     <nav>
-        <a href="/">Home</a>
+        <a href="/" class="button is-black is-rounded">Home</a>
         {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
+        <button id="logout" class="button is-black is-rounded">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" class="button is-black is-rounded">Login</a>
         {{/if}}
     </nav>
     <main>
         <aside>
-            <h2>Enjoy the galleries!</h2>
+            <h2>Current Companies</h2>
         </aside>
-        <div class="gallery">
+        <div class="companies">
             {{{body}}}
         </div>
     </main>
