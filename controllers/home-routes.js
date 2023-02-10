@@ -1,13 +1,13 @@
 //Skeleton code from Module 14 lesson 20 /controllers/home-routes.js
 const router = require('express').Router();
-const { User, Company} = require('../models');
+const { User, JobPosting} = require('../models');
 //Import middleware to check if logged on
 const withAuth = require('./../utils/auth')
 // GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await User.findAll({
-      include: [{model: Company}],
+    const postData = await JobPosting.findAll({
+      include: [{ model: User }],
     });
 
     const posts = postData.map((post) =>
