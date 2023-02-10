@@ -6,11 +6,11 @@ const withAuth = require('./../utils/auth')
 // GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await JobPosting.findAll({
+    const JobPostingData = await JobPosting.findAll({
       include: [{ model: User }],
     });
 
-    const posts = postData.map((post) =>
+    const posts = JobPostingData.map((post) =>
       post.get({ plain: true })
     );
 
@@ -25,50 +25,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET all Posts for id
-router.get('/dashboard', async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: [{model: Comment}, {model: User}],
-    });
-
-    const userPosts = postData.map((post) =>
-      post.get({ plain: true })
-    );
-
-    res.status(200).render('dashboard', {
-      userPosts,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one Post
-router.get('/post/:id',withAuth, async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    } else {
-    // If the user is logged in, allow them to view the post
-    try {
-      const postData = await Post.findByPk(req.params.id, {
-        include: [{model: Comment}, {model: User}],
-      });
-      if(!postData){
-        res.status(404).json({ message: 'No post found with that id!' });
-      }else{
-        const post = postData.get({ plain: true });
-        res.status(200).render('post', { post, loggedIn: req.session.loggedIn });
-      }   
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
 
 // GET one comment
 router.get('/comment/:id',withAuth, async (req, res) => {

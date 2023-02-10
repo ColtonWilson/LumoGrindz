@@ -1,6 +1,6 @@
 {{!-- skeleton from Module 14 lesson 20 /views/layouts/main.handlebars --}}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-warning">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body class="has-background-gold is-family-monospace">
+<body class="is-family-monospace">
     <header>
         <h1 class="is-size-3">Welcome to LumoGrindz</h1>
     </header>
@@ -18,7 +18,12 @@
         of money you make for your job position and compare it to other jobs and companies
         to see the value of your position compared to others.
     </p>
-    <nav>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <img src="../../assets/images/queen-bee-logo.png" alt="site logo" style="max-height: 70px" class="py-3 px-3">
+            </a>
+        </div>
         <a href="/" class="button is-black is-rounded">Home</a>
         {{#if loggedIn}}
         <button id="logout" class="button is-black is-rounded">Logout</button>
