@@ -1,6 +1,6 @@
 {{!-- skeleton from Module 14 lesson 20 /views/layouts/main.handlebars --}}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-warning">
 
 <head>
     <meta charset="utf-8">
@@ -10,24 +10,26 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body class="has-background-gold is-family-monospace">
+<body class="is-family-monospace">
     <header>
-        <h1 class="is-size-3">Welcome to LumoGrindz</h1>
+        <h1 class="is-size-3">LumoGrindz</h1>
+            <nav>
+                <a href="/" class="button is-black is-rounded">Home</a>
+                <a href="/postings" class="button is-black is-rounded">Postings</a>
+                {{#if loggedIn}}
+                <button id="logout" class="button is-black is-rounded">Logout</button>
+                {{else}}
+                <a href="/login" class="button is-black is-rounded">Login</a>
+                {{/if}}
+            </nav>
     </header>
-    <p style="color:black">When you create an account with LumoGrindz you can aluminate the amount
-        of money you make for your job position and compare it to other jobs and companies
-        to see the value of your position compared to others.
-    </p>
-    <nav>
-        <a href="/" class="button is-black is-rounded">Home</a>
-        <a href="/postings" class="button is-black is-rounded">Postings</a>
-        {{#if loggedIn}}
-        <button id="logout" class="button is-black is-rounded">Logout</button>
-        {{else}}
-        <a href="/login" class="button is-black is-rounded">Login</a>
-        {{/if}}
-    </nav>
+
+
     <main>
+            <p style="color:black">When you create an account with LumoGrindz you can aluminate the amount
+                of money you make for your job position and compare it to other jobs and companies
+                to see the value of your position compared to others.
+            </p>
         <aside>
             <h2>Current Companies</h2>
         </aside>
