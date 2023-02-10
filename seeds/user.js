@@ -22,6 +22,15 @@ const userData = [
 
 ];
 
-const seedUser = () => User.bulkCreate(userData);
+//Good to keep in mind to use saved passwords
+const seedUser = async () => {
+  for(let i=0; i < userData.length; i++)
+  {
+    await User.create(userData[i]);
+  }
+}
+
+
+//User.bulkCreate(userData);
 
 module.exports = seedUser;
