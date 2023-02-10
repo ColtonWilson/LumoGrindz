@@ -1,18 +1,42 @@
-// import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
-const sequelize = require('../config/connection');
+const router = require('express').Router();
+const {  ,  } = require('../../models');
+const Position = require('../../models/Position');
 
-// const Category = require('./Category');
+// find all positions
+router.get('/', async (req, res) => {
+  try {
+    const positionData = await Position.findAll({
+        include: [{ model: ????}],
+    });
+    res.status(200).json(positionData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// Initialize Company model (table) by extending off Sequelize's Model class
-class Company extends Model {}
+// find one position in the company selected by job title??
+router.get('/:id', async (req, res) => {
+  try {
+    const positionData = await Position.findByPk(req.params.id, {
+      include: [{ mode: Positions }],
+    });
+    res.status(200).json(positionData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// set up fields and rules for Company model
-Company.init(
-{
-    id: {
-        type: 
-    }
-}
-)
+// create a new position
+router.post('/', async (req, res) => {
+  try {
+    const newPosition = await Positions.create ( {
+        company_name: req.body.company_name,
+    });
+    res.status(200).json(newPosition);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
