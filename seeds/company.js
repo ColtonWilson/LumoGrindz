@@ -1,21 +1,25 @@
-const { User } = require('../models');
+const { Company } = require('../models');
 
 const userData = [
   {
-    username: 'John Smith',
-    email: 'john@test.com',
-    password: 'password',
+    name: 'Google',
+    // admin
+    is_in_queue: false,
   },
   {
-    username: 'admin',
-    email: 'admin@test.com',
-    password: '123456',
-    is_admin: true,
+
+    name: 'Apple',
+    // john Smith
+    is_in_queue: false,
+
   },
+
+
+
 
 
 ];
 
-const seedUser = () => User.bulkCreate(userData);
+const seedUser = () => Company.bulkCreate(userData);
 
 module.exports = seedUser;
