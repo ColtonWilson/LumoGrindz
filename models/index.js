@@ -1,19 +1,13 @@
 //Skeleton code from Module 14 lesson 20 /models/index.js
 const User = require('./User');
-const Company = require('./Company');
+const JobPosting = require('./JobPosting');
 
-
-
-
-User.belongsTo(Company, {
-  foreignKey: 'company_id',
+User.hasMany(JobPosting, {
+  foreignKey: 'user_id',
 });
 
-Company.hasMany(User, {
-  foreignKey: 'company_id',
+JobPosting.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
-
-
-
-module.exports = { User, Company};
+module.exports = { User, JobPosting };
