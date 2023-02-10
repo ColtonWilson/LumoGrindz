@@ -1,77 +1,118 @@
+//Skeleton code from Module 14 lesson 20 /controllers/home-routes.js
 const router = require('express').Router();
-const { Company, User, Position } = require('../models');
-const withAuth = require('../utils/auth');
-
+const { User, JobPosting} = require('../models');
+//Import middleware to check if logged on
+const withAuth = require('./../utils/auth')
+// GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Company.findAll({
-      include: [{ model: User }, { model: Position }],
+    const postData = await JobPosting.findAll({
+      include: [{ model: User }],
     });
 
-    // Serialize data so the template can read it
-    const companies = projectData.map((project) => project.get({ plain: true }));
+    const posts = postData.map((post) =>
+      post.get({ plain: true })
+    );
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', {
-      companies,
-      logged_in: req.session.logged_in,
+    res.status(200).render('homepage', {
+      posts,
+      loggedIn: req.session.loggedIn,
     });
+    console.log(posts);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+// GET all Posts for id
+router.get('/dashboard', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    const postData = await Post.findAll({
+      include: [{model: Comment}, {model: User}],
     });
 
-    const project = projectData.get({ plain: true });
+    const userPosts = postData.map((post) =>
+      post.get({ plain: true })
+    );
 
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in,
+    res.status(200).render('dashboard', {
+      userPosts,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
+// GET one Post
+router.get('/post/:id',withAuth, async (req, res) => {
+  // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } else {
+    // If the user is logged in, allow them to view the post
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [{model: Comment}, {model: User}],
+      });
+      if(!postData){
+        res.status(404).json({ message: 'No post found with that id!' });
+      }else{
+        const post = postData.get({ plain: true });
+        res.status(200).render('post', { post, loggedIn: req.session.loggedIn });
+      }   
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   }
 });
 
+// GET one comment
+router.get('/comment/:id',withAuth, async (req, res) => {
+    // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } else {
+    // If the user is logged in, allow them to view the post
+    try {
+      const commentData = await Comment.findByPk(req.params.id, {
+        include: [{model: User}],
+      });
+      if(!commentData){
+        res.status(404).json({ message: 'No comment found with that id!' });
+      }else{
+        const comment = commentData.get({ plain: true });
+        res.status(200).render('comment', { comment, loggedIn: req.session.loggedIn });
+      }   
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  }
+});
+
+//GET login page
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
+  if (req.session.loggedIn) {
+    res.redirect('/');
     return;
   }
 
   res.render('login');
+});
+
+
+//GET add-comment Page
+router.get('/post/:id/add-comment', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('add-comment', { loggedIn: req.session.loggedIn });
+    return;
+  }
+
+  res.redirect('/');
 });
 
 module.exports = router;

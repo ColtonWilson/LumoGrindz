@@ -12,6 +12,12 @@ const userData = [
     password: '123456',
     is_admin: true,
   },
+    {
+    username: 'kevin',
+    email: 'kevin@test.com',
+    password: '123456k',
+    is_admin: true,
+  },
 
 
 ];
