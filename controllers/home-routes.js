@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
   try {
     const postData = await User.findAll({
       include: [{model: Company}],
+      
+      
     });
 
     const posts = postData.map((post) =>
