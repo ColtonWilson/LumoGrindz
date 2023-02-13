@@ -30,10 +30,10 @@ User.init(
       },
     },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
       validate: {
-        len: [6],
+        len: [6,25],
       },
     },
     is_admin: {

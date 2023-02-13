@@ -25,25 +25,30 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET all Posts for id
-router.get('/dashboard', async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: [{model: Comment}, {model: User}],
-    });
+// GET all Posts for user
+router.get('/postings', async (req, res) => {
+    // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } else {
+        try {
+        const postData = await JobPosting.findAll({
+        include: [{model: User}],
+        });
 
-    const userPosts = postData.map((post) =>
-      post.get({ plain: true })
-    );
+        const userPosts = postData.map((post) =>
+        post.get({ plain: true })
+       );
 
-    res.status(200).render('dashboard', {
-      userPosts,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+        res.status(200).render('dashboard', {
+        userPosts,
+        loggedIn: req.session.loggedIn,
+        });
+        } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+        }
+    }
 });
 
 // GET one Post
