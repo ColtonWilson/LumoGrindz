@@ -15,14 +15,14 @@ JobPosting.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8, 50],
+        len: [1, 50],
       },
     },
     position_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-        len: [8,50]
+        len: [1,50]
     }
     },
     post_date: {
@@ -38,11 +38,8 @@ JobPosting.init(
     }
     },
     salary:{
-        type: DataTypes.DECIMAL,
+        type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-            isDecimal: true,
-        }
     },
     user_id:{
         type: DataTypes.INTEGER,

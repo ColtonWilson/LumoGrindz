@@ -8,6 +8,7 @@
     <title>LumoGrindz</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
 <body class="is-family-monospace">
@@ -15,7 +16,8 @@
         <h1 class="is-size-3">LumoGrindz</h1>
             <nav>
                 <a href="/" class="button is-black is-rounded">Home</a>
-                <a href="/postings" class="button is-black is-rounded">Postings</a>
+                <a href="/postings" class="button is-black is-rounded"> My Postings</a>
+                <a href="/add-job" id="Add-Job" class="button is-black is-rounded">Add Job</a>
                 {{#if loggedIn}}
                 <button id="logout" class="button is-black is-rounded">Logout</button>
                 {{else}}
@@ -30,16 +32,17 @@
                 of money you make for your job position and compare it to other jobs and companies
                 to see the value of your position compared to others.
             </p>
-        <aside>
-            <h2>Current Companies</h2>
-        </aside>
+
         <div class="companies">
             {{{body}}}
         </div>
     </main>
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
+    <script src="/js/addJob.js"></script>
     {{/if}}
 </body>
+
+
 
 </html>
