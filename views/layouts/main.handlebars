@@ -1,47 +1,64 @@
-{{!-- skeleton from Module 14 lesson 20 /views/layouts/main.handlebars --}}
-<!DOCTYPE html>
-<html lang="en" class="has-background-warning">
+{{! skeleton from Module 14 lesson 20 /views/layouts/main.handlebars }}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang='en' class='has-background-warning'>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>LumoGrindz</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
+    <link
+      rel='stylesheet'
+      type='text/css'
+      href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css'
+    />
+    <link rel='stylesheet' type='text/css' href='/css/style.css' />
+  </head>
 
-<body class="is-family-monospace">
-    <header>
-        <h1 class="is-size-3">Welcome to LumoGrindz</h1>
-    </header>
-    <p style="color:black" class ="">When you create an account with LumoGrindz you can aluminate the amount
-        of money you make for your job position and compare it to other jobs and companies
-        to see the value of your position compared to others.
-    </p>
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="../../assets/images/queen-bee-logo.png" alt="site logo" style="max-height: 70px" class="py-3 px-3">
+  <body class='is-family-monospace'>
+    <header class="has-background-warning is-flex-wrap">
+      <div class="navbar-brand">
+            <a href='/' class="navbar-item">
+                <img src="/images/bee-logo.gif" alt="site logo" style="max-height: 100px" class="has-background-warning">
             </a>
+            <h1 class='is-size-2 py-5 px-2'>LumoGrindz</h1>
         </div>
-        <a href="/" class="button is-black is-rounded">Home</a>
-        {{#if loggedIn}}
-        <button id="logout" class="button is-black is-rounded">Logout</button>
-        {{else}}
-        <a href="/login" class="button is-black is-rounded">Login</a>
-        {{/if}}
-    </nav>
+      <div class="navbar-menu">
+        <nav class='navbar-end has-background-warning'>
+          <a href='/' class='button is-black is-rounded my-1 mx-1 navbar-item'>Home</a>
+          <a href='/postings' class='button is-black is-rounded my-1 mx-1 navbar-item'>Postings</a>
+          {{#if loggedIn}}
+            <button
+              id='logout'
+              class='button is-black is-rounded my-1 mx-1 navbar-item'
+            >Logout</button>
+          {{else}}
+            <a href='/login' class='button is-black is-rounded my-1 mx-1 navbar-item'>Login</a>
+          {{/if}}
+        </nav>
+      </div>
+    </header>
+
     <main>
-        <aside>
-            <h2>Current Companies</h2>
-        </aside>
-        <div class="companies">
-            {{{body}}}
+      <section class="section">
+      <p style='color:black'>Create an account with LumoGrindz and iluminate the
+        amount of money you can make for your job position and help others by
+        showing them the amount you make. LumoGrindz is designed to help people
+        who are getting underpaid without even knowing it, around 47% of
+        americans feel that they are getting underpaid, find out here if you are
+        actually getting underpaid.
+      </p>
+      </section>
+      <aside>
+        <h2>Job Positions posted</h2>
+        <div class='companies'>
+          {{{body}}}
         </div>
+      </aside>
+
     </main>
     {{#if loggedIn}}
-    <script src="/js/logout.js"></script>
+      <script src='/js/logout.js'></script>
     {{/if}}
-</body>
+  </body>
 
 </html>
