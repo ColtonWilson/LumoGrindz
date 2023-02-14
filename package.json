@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ColtonWilson/name_pending#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bulma": "^0.9.4",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "eslint": "^8.33.0",

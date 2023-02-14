@@ -1,8 +1,11 @@
-//Skeleton code from Module 14 lesson 20 /controllers/index.js
 const router = require('express').Router();
 
 const userRoutes = require('./user-routes');
+const postingRoutes = require('./posting-routes');
+const adminRoutes = require('./admin-routes');
 
-router.use('/users', userRoutes);
+router.use('/user-routes', userRoutes);
+router.use('/job-postings', postingRoutes);
+router.use('/admin', adminRoutes);
 
 module.exports = router;
