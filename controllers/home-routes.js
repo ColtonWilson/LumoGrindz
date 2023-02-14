@@ -6,11 +6,11 @@ const withAuth = require('./../utils/auth')
 // GET all Posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await JobPosting.findAll({
+    const JobPostingData = await JobPosting.findAll({
       include: [{ model: User }],
     });
 
-    const posts = postData.map((post) =>
+    const posts = JobPostingData.map((post) =>
       post.get({ plain: true })
     );
 
