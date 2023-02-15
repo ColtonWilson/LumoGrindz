@@ -1,6 +1,6 @@
 //copy code from Module 14 lesson 20 /controllers/api/user-routes.js
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, JobPosting } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -13,6 +13,9 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.admin = dbUserData.is_admin;
 
       res.status(200).json(dbUserData);
     });
@@ -30,7 +33,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-    console.log(dbUserData);
+
     if (!dbUserData) {
       res
         .status(400)
@@ -46,9 +49,13 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-
+    console.log(dbUserData.id);
+    res.cookie('id', dbUserData.id);
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+  
 
       res
         .status(200)
@@ -72,20 +79,22 @@ router.post('/logout', (req, res) => {
 });
 
 
-// CREATE new comment
-router.post('/add-comment', async (req, res) => {
+// CREATE new job post
+router.post('/add-job', async (req, res) => {
   try {
-    const dbUserData = await Comment.create({
-      comment_date: req.body.date,
-      comment_desc: req.body.content,
-      user_id: req.body.user,
-      post_id: req.body.post,
+    console.log(req.session.user_id);
+    
+    const dbJobData = await JobPosting.create({
+      company_name: req.body.company,
+      position_name: req.body.position,
+      job_desc: req.body.jobDesc,
+      salary: req.body.salary,
+      user_id: req.session.user_id,
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(dbJobData);
     });
   } catch (err) {
     console.log(err);

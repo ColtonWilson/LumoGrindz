@@ -12,6 +12,7 @@
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css'
     />
     <link rel='stylesheet' type='text/css' href='/css/style.css' />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   </head>
 
   <body class='is-family-monospace simplecustomscrollbar has-text-centered'>
@@ -31,10 +32,8 @@
     <div class='side-bar is-flex'>
       <nav class='nav-container has-background-warning'>
         <a href='/' class='button is-black is-rounded my-1 mx-2'>Home</a>
-        <a
-          href='/postings'
-          class='button is-black is-rounded my-1 mx-2'
-        >Postings</a>
+        <a href='/postings' class='button is-black is-rounded my-1 mx-2'> My Postings</a>
+        <a href="/add-job" id="Add-Job" class="button is-black is-rounded my-1 mx-2">Add Job</a>
         {{#if loggedIn}}
           <button
             id='logout'
@@ -68,6 +67,7 @@
     </main>
     {{#if loggedIn}}
       <script src='/js/logout.js'></script>
+    <script src="/js/addJob.js"></script>
     {{/if}}
     <footer class='footer content-div'>
       <div class='content has-text-centered'>
@@ -82,5 +82,7 @@
       </div>
     </footer>
   </body>
+
+
 
 </html>
