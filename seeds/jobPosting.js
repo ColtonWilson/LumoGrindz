@@ -8,7 +8,6 @@ const jobPositionData = [
     salary: 125000,
     // admin
     user_id: 2,
-    is_in_queue: true,
   },
   {
 
