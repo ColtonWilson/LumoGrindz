@@ -2,7 +2,7 @@
 const sequelize = require('../config/connection');
 const seedUser = require('./user');
 const seedJobPosition = require('./jobPosting');
-//const seedPosition = require('./position');
+
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -11,7 +11,7 @@ const seedAll = async () => {
 
   await seedJobPosition();
 
-  //await seedPosition();
+
 
   process.exit(0);
 };

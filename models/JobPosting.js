@@ -34,7 +34,7 @@ JobPosting.init(
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
-        len: [8,5000]
+        len: [1,5000]
     }
     },
     salary:{
