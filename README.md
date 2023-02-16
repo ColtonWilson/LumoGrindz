@@ -28,7 +28,7 @@ see below
 Link to application can be found [Here](http://heroku)
 Login craditionals that can be used:
 <pre>
-Username: admin
+Email: admin@test.com
 Password: 123456
 </pre>
 Or can create your own username and signup by providing a username, email, and password.
