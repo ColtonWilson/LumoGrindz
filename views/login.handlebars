@@ -1,38 +1,40 @@
 {{!-- skeleton from Module 14 lesson 20 /views/login.handlebars --}}
-<div class="row justify-space-between-md">
-    <div class="login-card">
-        <h2 class="page-title">Login</h2>
+<div class="mx-3">
+    <div class="box">
+        <h2 class="title">Login</h2>
         <form class="form login-form">
-            <div class="form-group">
-                <label for="email-login">Email:</label>
-                <input class="form-input" type="text" id="email-login" />
+            <div class="field">
+                <label for="email-login" class="label">Email:</label>
+                <input class="form-input input" type="text" id="email-login" />
             </div>
-            <div class="form-group">
-                <label for="password-login">Password:</label>
-                <input class="form-input" type="password" id="password-login" />
+            <div class="field">
+                <label for="password-login" class="label">Password:</label>
+                <div class="">
+                    <input class="form-input input" type="password" id="password-login" />
+                </div>
             </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">login</button>
+            <div class="">
+                <button class="button is-warning my-2" type="submit">login</button>
             </div>
         </form>
     </div>
-    <div class="login-card">
-        <h2 class="page-title">Signup</h2>
+    <div class="box my-4">
+        <h2 class="title">Signup</h2>
         <form class="form signup-form">
-            <div class="form-group">
+            <div class="">
                 <label for="username-signup">Username:</label>
-                <input class="form-input" type="text" id="username-signup" />
+                <input class="form-input input" type="text" id="username-signup" />
             </div>
-            <div class="form-group">
+            <div class="">
                 <label for="email-signup">Email:</label>
-                <input class="form-input" type="text" id="email-signup" />
+                <input class="form-input input" type="text" id="email-signup" />
             </div>
-            <div class="form-group">
+            <div class="">
                 <label for="password-signup">Password:</label>
-                <input class="form-input" type="password" id="password-signup" />
+                <input class="form-input input" type="password" id="password-signup" />
             </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">signup</button>
+            <div class="">
+                <button class="button is-warning my-2" type="submit">signup</button>
             </div>
         </form>
     </div>
