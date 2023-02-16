@@ -1,5 +1,7 @@
 let currency_field = document.getElementById("currency-field");
+let delayInMilliseconds = 2000;
 //add-job form handler
+
 const addJobFormHandler = async (event) => {
   event.preventDefault();
   console.log("working");
@@ -18,7 +20,10 @@ const addJobFormHandler = async (event) => {
     
     
     if (response.ok) {
-      document.location.replace('/postings');
+      setTimeout(function () {
+        document.location.replace('/postings');
+      }, delayInMilliseconds)
+      
     } else {
       alert('Failed to add job.');
     }
