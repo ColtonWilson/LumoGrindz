@@ -1,7 +1,4 @@
- 
- 
- let currency_field = document.getElementById("currency-field");
-
+let currency_field = document.getElementById("currency-field");
 //add-job form handler
 const addJobFormHandler = async (event) => {
   event.preventDefault();

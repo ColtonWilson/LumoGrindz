@@ -104,11 +104,13 @@ header{
 .hidden{
 	opacity: 0;
 	filter: blur(5px);
+	transform: translateX(90%);
 	transition: all 1s;
 }
 
 .hidden.show{
 	opacity: 1;
+	transform: translateX(0);
 	filter: blur(0);
 }
 /* makes buttons visible even on mobile screens */
