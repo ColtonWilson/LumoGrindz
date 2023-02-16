@@ -13,14 +13,14 @@
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css'
     />
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-      <script scr="./js/styling.js" ></script>
+    <script src='https://code.jquery.com/jquery-3.6.3.min.js'></script>
+    <script scr='./js/styling.js'></script>
   </head>
 
-  <body class='is-family-monospace  has-text-centered'>
+  <body class='is-family-monospace'>
     <header class='has-background-warning is-flex'>
       <div class='navbar-brand'>
-        <a href='/' class=''>
+        <a href='/' class='navbar-item'>
           <img
             src='/images/bee-logo.gif'
             alt='site logo'
@@ -34,8 +34,13 @@
     <div class='side-bar is-flex'>
       <nav class='nav-container has-background-warning'>
         <a href='/' class='button is-black is-rounded my-1 mx-2'>Home</a>
-        <a href='/postings' class='button is-black is-rounded my-1 mx-2'> My Postings</a>
-        <a href="/add-job" id="Add-Job" class="button is-black is-rounded my-1 mx-2">Add Job</a>
+        <a href='/postings' class='button is-black is-rounded my-1 mx-2'>
+          My Postings</a>
+        <a
+          href='/add-job'
+          id='Add-Job'
+          class='button is-black is-rounded my-1 mx-2'
+        >Add Job</a>
         {{#if loggedIn}}
           <button
             id='logout'
@@ -52,7 +57,7 @@
 
     <main>
       <section class='section content-div'>
-        <p style='color:black'>Create an account with LumoGrindz and iluminate
+        <p style='color:black' class="is-size-5">Create an account with LumoGrindz and iluminate
           the amount of money you can make for your job position and help others
           by showing them the amount you make. LumoGrindz is designed to help
           people who are getting underpaid without even knowing it, around 47%
@@ -70,7 +75,7 @@
     <script src='./js/styling.js'></script>
     {{#if loggedIn}}
       <script src='./js/logout.js'></script>
-    <script src="./js/addJob.js"></script>
+      <script src='./js/addJob.js'></script>
     {{/if}}
     <footer class='footer content-div'>
       <div class='content has-text-centered'>
@@ -85,7 +90,5 @@
       </div>
     </footer>
   </body>
-
-
 
 </html>
