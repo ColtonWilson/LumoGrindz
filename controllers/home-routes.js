@@ -77,8 +77,8 @@ router.get('/add-job', (req, res) => {
     res.render('add-job');
     return;
   }
-  res.redirect('/');
-  
+  res.redirect('/login');
+
 });
 
 module.exports = router;
