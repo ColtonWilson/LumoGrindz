@@ -25,7 +25,7 @@ Overall, the web application is a useful tool for job seekers and professionals 
 -webkit-scrollbar
 see below
 ## Usage
-Link to application can be found [Here](http://heroku)
+Link to application can be found [Here](https://lumo-grindz.herokuapp.com/)
 Login craditionals that can be used:
 <pre>
 Email: admin@test.com
