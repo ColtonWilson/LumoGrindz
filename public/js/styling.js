@@ -1,5 +1,3 @@
-console.log("I work");
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting){
@@ -8,7 +6,7 @@ const observer = new IntersectionObserver((entries) => {
     })
     },
     {
-        threshold: 1,
+        threshold: 0,
     }
 )
 
