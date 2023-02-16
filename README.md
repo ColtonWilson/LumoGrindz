@@ -22,6 +22,7 @@ Overall, the web application is a useful tool for job seekers and professionals 
 <br>
 <br>
 ## Installation
+-webkit-scrollbar
 see below
 ## Usage
 Link to application can be found [Here](http://heroku)
@@ -33,6 +34,11 @@ Password: 123456
 Or can create your own username and signup by providing a username, email, and password.
 ## Contributing
 Submit bug and feature requests.
+<br>
+Furture work: 
+1. Feature so that all job posts created have to be approved by admin before being posted to application.
+2. Combine all job positings under one company umbrella card and when company card is selected it will then show all position cards for that company. 
+3. Calculations for salary to break down into hourly
 ## Tests
 No tests
 ## License
