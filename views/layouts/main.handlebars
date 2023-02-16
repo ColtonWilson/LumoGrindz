@@ -6,64 +6,89 @@
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>LumoGrindz</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css' />
     <link
       rel='stylesheet'
       type='text/css'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css'
     />
-    <link rel='stylesheet' type='text/css' href='/css/style.css' />
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script src='https://code.jquery.com/jquery-3.6.3.min.js'></script>
+    <script scr='./js/styling.js'></script>
   </head>
 
   <body class='is-family-monospace'>
-    <header class="has-background-warning is-flex-wrap">
-      <div class="navbar-brand">
-            <a href='/' class="navbar-item">
-                <img src="/images/bee-logo.gif" alt="site logo" style="max-height: 100px" class="has-background-warning">
-            </a>
-            <h1 class='is-size-2 py-5 px-2'>LumoGrindz</h1>
-        </div>
-      <div class="navbar-menu">
-        <nav class='navbar-end has-background-warning'>
-          <a href='/' class='button is-black is-rounded my-1 mx-1 navbar-item'>Home</a>
-          <a href='/postings' class='button is-black is-rounded my-1 mx-1 navbar-item'> My Postings</a>
-          <a href="/add-job" id="Add-Job" class="button is-black is-rounded">Add Job</a>
-          {{#if loggedIn}}
-            <button
-              id='logout'
-              class='button is-black is-rounded my-1 mx-1 navbar-item'
-            >Logout</button>
-          {{else}}
-            <a href='/login' class='button is-black is-rounded my-1 mx-1 navbar-item'>Login</a>
-          {{/if}}
-        </nav>
+    <header class='has-background-warning is-flex'>
+      <div class='navbar-brand'>
+        <a href='/' class='navbar-item'>
+          <img
+            src='/images/bee-logo.gif'
+            alt='site logo'
+            style='max-height: 100px'
+            class='has-background-warning'
+          />
+        </a>
+        <h1 class='is-size-2 py-5 px-2'>LumoGrindz</h1>
       </div>
     </header>
+    <div class='side-bar is-flex'>
+      <nav class='nav-container has-background-warning'>
+        <a href='/' class='button is-black is-rounded my-1 mx-2'>Home</a>
+        <a href='/postings' class='button is-black is-rounded my-1 mx-2'>
+          My Postings</a>
+        <a
+          href='/add-job'
+          id='Add-Job'
+          class='button is-black is-rounded my-1 mx-2'
+        >Add Job</a>
+        {{#if loggedIn}}
+          <button
+            id='logout'
+            class='button is-black is-rounded my-1 mx-2'
+          >Logout</button>
+        {{else}}
+          <a
+            href='/login'
+            class='button is-black is-rounded my-1 mx-2'
+          >Login</a>
+        {{/if}}
+      </nav>
+    </div>
 
     <main>
-      <section class="section">
-      <p style='color:black'>Create an account with LumoGrindz and iluminate the
-        amount of money you can make for your job position and help others by
-        showing them the amount you make. LumoGrindz is designed to help people
-        who are getting underpaid without even knowing it, around 47% of
-        americans feel that they are getting underpaid, find out here if you are
-        actually getting underpaid.
-      </p>
+      <section class='section content-div'>
+        <p style='color:black' class="is-size-5">Create an account with LumoGrindz and iluminate
+          the amount of money you can make for your job position and help others
+          by showing them the amount you make. LumoGrindz is designed to help
+          people who are getting underpaid without even knowing it, around 47%
+          of americans feel that they are getting underpaid, find out here if
+          you are actually getting underpaid.
+        </p>
       </section>
       <aside>
-        <h2>Job Positions posted</h2>
-        <div class='companies'>
+        <div class='companies content-div'>
           {{{body}}}
         </div>
       </aside>
 
     </main>
+    <script src='./js/styling.js'></script>
     {{#if loggedIn}}
-      <script src='/js/logout.js'></script>
-    <script src="/js/addJob.js"></script>
+      <script src='./js/logout.js'></script>
+      <script src='./js/addJob.js'></script>
     {{/if}}
+    <footer class='footer content-div'>
+      <div class='content has-text-centered'>
+        <p>
+          <strong>LumoGrindz</strong>
+          by
+          <a href='https://github.com/CarleeMarie'>Carlee Marie</a>.
+          <a href='https://github.com/ColtonWilson'>Colton Wilson</a>.
+          <a href='https://github.com/Marcosauras'>Marc Samuel Hamilton</a>.
+          <a href='https://github.com/Kkadaija25'>Ka'Daija Dortch</a>.
+        </p>
+      </div>
+    </footer>
   </body>
-
-
 
 </html>

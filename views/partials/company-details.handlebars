@@ -1,13 +1,19 @@
-<section class="card">
-    <div class="card_header">
-        <a href="/company/{{id}}">{{company_name}}</a>
-        <div class="company_name_date">
-            <h1>posted by {{user.username}}</h1>
-            <p>{{position_name}}</p>
-            <p>{{job_desc}} </p>
+<section class = "my-6 mx-3 hidden">
+    <div class = "box has-background-grey-darker">
+        <div>
+            <div class = "has-background-grey-darker">
+                <a href="/company/{{id}}" class="title has-text-white-ter">Company Name: {{company_name}}</a>
+            </div>
+            <div class = "has-background-white">
+                <h2 class="is-size-3">Position Name </h4>
+                <p class="is-size-4">{{position_name}}</p>
+                <h3 class="is-size-3">Salary: {{salary}} </h3>
+                <h4 class="is-size-3">Job Description</h4>
+                <p class="is-size-5">{{job_desc}}</p>
+            </div>
         </div>
-    </div>
-    <div class="card_body">
-        {{post_desc}}
+        <div>
+            <p class="has-text-white-ter">Posted by {{user.username}} on {{format_date post_date}}</p>
+        </div>
     </div>
 </section>
