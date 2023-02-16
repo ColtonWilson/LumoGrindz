@@ -1,128 +1,54 @@
-# Tech-Blog-with-Model-View-Controller-MVC-
+# LumoGrindz
+![License Badge](https://shields.io/badge/license-MIT-yellow)
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+6. [License](#license)
+7. [Questions](#questions)
 
-##Create packageJson file
+## Description
+The web application is designed to help users compare job positions and salaries across different industries and locations. The main features of the application include:
+<br>
+1. Job position search: The application allows users to see which positions are offered at different companies. 
+2. Salary comparison: The application provides salary data for each job position, allowing users to compare their own salary to similar job positions at other companies or even the same company. 
+3. User reviews: The application allows users to read and write reviews of employers and job positions. Users can share their experiences and insights with others to help them make informed decisions.
+<br>
+Overall, the web application is a useful tool for job seekers and professionals who want to stay up-to-date on job trends, salaries, and benefits in their industry and location.
+<br>
+![screenshot of working app](photo url here)
+<br>
+<br>
+## Installation
+see below
+## Usage
+Link to application can be found [Here](http://heroku)
+Login craditionals that can be used:
 <pre>
-npm init
+Username: admin
+Password: 123456
 </pre>
+Or can create your own username and signup by providing a username, email, and password.
+## Contributing
+Submit bug and feature requests.
+## Tests
+No tests
+## License
+Please see https://mit-license.org/ to get detailed information for this license
 
-##Server setup steps when seeding database with a JavaScript file:
+## Questions
+You can find [Colton](https://github.com/ColtonWilson) on Github
+<br>
+You can find [Mark](https://github.com/Marcosauras) on Github
+<br>
+You can find [Carlee](https://github.com/CarleeMarie) on Github
+<br>
+You can find [KaDaija](https://github.com/Kkadaija25) on Github
 
-1. Set login information in .env file
-<pre>
-DB_NAME='your_mysql_database_name'
-DB_USER='your_mysql_username'
-DB_PASSWORD='your_mysql_password' 
-</pre>
 
-2. Login into mysql
-<pre>
-mysql -u root -p
-</pre>
 
-3. Source the schema
-<pre>
-source db/schema.sql;
-</pre>
 
-4. Exit out of mysql terminal
-<pre>
-quit
-</pre>
 
-5. Install node packages
-<pre>
-npm i
-</pre>
 
-6. Install dotenv
-<pre>
-npm i dotenv
-</pre>
-
-7. Install Prettier
-<pre>
-npm install
-npm install prettier eslint-config-prettier --save-dev
-</pre>
-
-a. To use prettier
-
-<pre>
-npx prettier --write example.js
-</pre>
-
-b. For additional prettier rules create a `.prettierrc.json` to root directory
-<br> See file for example rule
-
-c. For prettier ignore additional file with a `.prettierignore` in root directory
-<br> See file for example rule
-
-d. Inform ESLint that we are using Prettier
-<br>Open the `.eslintrc.json` file and add the following property to the config object:
-
-```json
-"extends": ["prettier"]
-```
-
-## Hints
-
-- Double-check that Prettier formatted your code the way you intended. Sometimes Prettier makes incorrect assumptions, particularly with HTML documents.
-
-- More information on how to set up Prettier can be found in the [Prettier install guide](https://prettier.io/docs/en/install.html).
-
-- The [Prettier documentation on options](https://prettier.io/docs/en/options.html) explains other configurations that you can add to the `.prettierrc.json` file.
-
-8. Install Lint
-<pre>
-npm install eslint
-</pre>
-
-9. Install Handlebars
-<pre>
-npm install express-handlebars
-</pre>
-
-10. Install Mysql
-<pre>
-npm install --save mysql2
-</pre>
-
-11. Install Sequelize
-<pre>
-npm install --save sequelize
-</pre>
-
-12. Install dotenv
-<pre>
-npm install dotenv --save
-</pre>
-
-13. Install bcrypt
-<pre>
-npm install bcrypt
-</pre>
-
-13.5 Install Express
-<pre>
-npm install express
-</pre>
-
-14. Install Express-session
-<pre>
-npm install express-session
-</pre>
-
-15. Install Connect Session Store using Sequelize
-<pre>
-npm install connect-session-sequelize
-</pre>
-
-16. Seed the database
-<pre>
-node ./seeds/index.js
-</pre>
-
-17. Start Server
-<pre>
-npm start
-</pre>
